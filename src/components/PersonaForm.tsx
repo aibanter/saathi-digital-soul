@@ -285,8 +285,16 @@ export function PersonaForm() {
         {formData.contact_info && (
           <div className="bg-card border border-border rounded-lg p-4">
             <p className="text-sm text-muted-foreground">
-              We'll send your shareable link to: <strong>{formData.contact_info}</strong>
+              We'll send your shareable link to:
             </p>
+            <div className="mt-2 space-y-1">
+              {formData.contact_info.email && (
+                <div className="font-medium">{formData.contact_info.email}</div>
+              )}
+              {formData.contact_info.phone && (
+                <div className="font-medium">{formData.contact_info.phone}</div>
+              )}
+            </div>
           </div>
         )}
         
